@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        h4 {
+            margin: 10px 0;
+            color: #333;
+        }
+        a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        form {
+            margin-top: 15px;
+        }
+        button {
+            background-color: #e63946;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #d62828;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Name: <%= user.name %></h3>
+        <h4>Age: <%= user.Age %></h4>
+        <h4>Gender: <%= user.Gender %></h4>
+        <h4>Mobile Number: <%= user.Mobile_number %></h4>
+        <a href="/persons">Back to Index</a>
+        <a href="/persons/<%= user._id %>/edit">Edit</a>
+        <form method="POST" action="/persons/<%= user._id %>?_method=DELETE">
+            <button>Delete</button>
+        </form>
+    </div>
+</body>
+
+</html>

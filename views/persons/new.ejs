@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Person</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, select {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input:focus, select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add New Person</h1>
+        <form action="/persons" method="post">
+            <section>
+                <label for="name">Enter Name:</label>
+                <input type="text" id="name" placeholder="Name" name="name" required>
+            </section>
+            <section>
+                <label for="Age">Enter Age:</label>
+                <input type="number" id="Age" placeholder="Age" name="Age" required>
+            </section>
+            <section>
+                <label for="Gender">Select Gender:</label>
+                <select name="Gender" id="Gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </section>
+            <section>
+                <label for="Mobile_number">Mobile Number:</label>
+                <input type="number" id="Mobile_number" placeholder="Mobile Number" name="Mobile_number" required>
+            </section>
+            <button type="submit">Submit</button>
+        </form>
+        <div class="back-link">
+            <a href="/persons">Back to Index</a>
+        </div>
+    </div>
+</body>
+
+</html>
